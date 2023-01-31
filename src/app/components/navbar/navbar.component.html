@@ -1,0 +1,19 @@
+<nav class="flex flex-row p-6 text-xl bg-red-600">
+  <span class="font-bold m-5">Pokémon Trainer</span>
+  <img
+    src="https://thumbs.dreamstime.com/b/game-pokeball-outline-icon-pokemon-container-vector-illustration-262063713.jpg"
+    alt="pokè-logo"
+    class="w-20"
+  />
+  <!-- Show only when logged in -->
+  <ng-container>
+    <ul class="flex flex-row text-white content-end">
+      <li class="m-5 hover:text-2xl">
+        <a routerLink="/pokémons">Catch some pokémons</a>
+      </li>
+      <li class="m-5 hover:text-2xl">
+        <a routerLink="/trainer">Insert username</a>
+      </li>
+    </ul>
+  </ng-container>
+</nav>
