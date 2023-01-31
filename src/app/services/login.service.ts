@@ -17,7 +17,6 @@ export class LoginService {
   ) { }
 
   //Login
-
   public login(username: string): Observable<Trainer> {
 
     return this.checkUsername(username)
@@ -33,7 +32,6 @@ export class LoginService {
 
 
   // check if user exist
-
   private checkUsername(username : string): Observable<Trainer | undefined> {
     return this.http.get<Trainer[]>(`${apiTrainers}?username=${username}`)
       .pipe(
@@ -43,7 +41,6 @@ export class LoginService {
   };
 
   // if not exist, create user
-
   private createTrainer(username: string): Observable<Trainer> {
     const user = {
       username,
@@ -58,11 +55,9 @@ export class LoginService {
     return this.http.post<Trainer>(apiTrainers, user, {
       headers});
 
-    //headers -- api key
-    // POST
+
   }
 
-  // if exist || created user - store user
 
 
 
