@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Pokemon Trainer
+ The third assignment in the class Java Fullstack Remote Nordics Jan 23 hosted by Noroff for learning Angular.
+
+
+# TODO
+### Component tree
+### Set up API
+### Take a look at Postman
+### Divide the work :)
+### Way of work - branches etc etc..
