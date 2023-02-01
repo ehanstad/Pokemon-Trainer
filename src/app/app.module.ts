@@ -7,18 +7,24 @@ import { AppComponent } from './app.component';
 import { LoginPage } from './pages/login/login.page';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import {NavbarComponent} from "./components/navbar/navbar.component";
+import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPage,
     LoginFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    PokemonCataloguePage,
+    PokemonListComponent,
+    PokemonItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
