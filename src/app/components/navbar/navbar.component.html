@@ -6,13 +6,13 @@
     class="w-20"
   />
   <!-- Show only when logged in -->
-  <ng-container>
+  <ng-container *ngIf="trainerName !== undefined">
     <ul class="flex flex-row text-white content-end">
       <li class="m-5 hover:text-2xl">
         <a routerLink="/pokémons">Catch some pokémons</a>
       </li>
       <li class="m-5 hover:text-2xl">
-        <a routerLink="/trainer">Insert username</a>
+        <a routerLink="/trainer">{{trainerName}}</a>
       </li>
     </ul>
   </ng-container>

@@ -1,0 +1,7 @@
+<header *ngIf="trainer">
+  <h1> Welcome, {{trainer.username}}</h1>
+</header>
+<main>
+  <h4>Your catched pokémons</h4>
+  <app-pokemon-list [pokemons$]="catchedPokemons$"></app-pokemon-list>
+</main>

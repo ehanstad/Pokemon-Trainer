@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pokemon, PokemonResponse } from '../models/pokemon.model';
-import { environments } from "src/enviroments/enviroments";
 import { BehaviorSubject, finalize, map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
-const { apiPokemons } = environments;
+const { apiPokemons } = environment;
 
 @Injectable({
   providedIn: 'root'
@@ -49,10 +49,7 @@ export class PokemonCatalogueService {
       )
       .subscribe({
         next: (pokemons: Pokemon[]) => {
-          console.log(pokemons);
-
           this._pokemons$.next(pokemons);
-          console.log(this.pokemons$);
         }
       })
   }
