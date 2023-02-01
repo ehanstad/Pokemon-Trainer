@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {LoginService} from "../../services/login.service";
 import {NgForm} from "@angular/forms";
 import {Trainer} from "../../models/trainer.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -11,7 +12,10 @@ import {Trainer} from "../../models/trainer.model";
 export class LoginFormComponent {
 
 
-  constructor(private readonly loginService: LoginService) {
+  constructor(
+    private readonly loginService: LoginService,
+    private readonly router: Router
+  ) {
   }
 
 
@@ -24,12 +28,11 @@ export class LoginFormComponent {
       .subscribe({
         next: (trainer:Trainer) => {
 
+
         },
         error: (error) => {
 
         }
       })
-
   }
-
 }
