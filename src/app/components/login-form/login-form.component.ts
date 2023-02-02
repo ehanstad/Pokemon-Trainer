@@ -22,15 +22,18 @@ export class LoginFormComponent {
   ) {
   }
 
+  // this is a getter for the trainer username
   public get trainerName(): string | undefined {
     return this.trainerService.trainer?.username;
   }
 
+
+// this is the function that is called when the user clicks the login button
   public loginSubmit(loginForm: NgForm): void {
 
     const {username} = loginForm.value;
 
-
+  //it gets the username and calls the login function from the login service
     this.loginService.login(username)
       .subscribe({
         next: (trainer: Trainer) => {

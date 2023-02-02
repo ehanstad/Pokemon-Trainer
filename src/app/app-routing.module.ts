@@ -5,16 +5,22 @@ import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogu
 import { ProfilePage } from './pages/profile/profile.page';
 import {AuthGuard} from "./guards/auth.guard";
 
+
+// This is the routing module, it defines the routes of the application
 const routes: Routes = [
+  // The empty path redirects to the login page
   {
     path: "",
     pathMatch: "full",
     redirectTo: "login"
   },
+  // the rest of the paths are defined here
   {
     path: "login",
     component: LoginPage,
   },
+
+  //these paths are protected by the AuthGuard
   {
     path: "pokémons",
     component: PokemonCataloguePage,
@@ -26,6 +32,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
