@@ -11,6 +11,8 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
 import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.component';
+import { CatchBtnComponent } from './components/catch-btn/catch-btn.component';
+import { ProfilePage } from './pages/profile/profile.page';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PokemonItemComponent } from './components/pokemon-item/pokemon-item.com
     NavbarComponent,
     PokemonCataloguePage,
     PokemonListComponent,
-    PokemonItemComponent
+    PokemonItemComponent,
+    CatchBtnComponent,
+    ProfilePage
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
 
-const {apiTrainers, apiKey} = environment
+const { apiTrainers, apiKey } = environment
 
 @Injectable({
   providedIn: 'root'
@@ -33,11 +33,11 @@ export class LoginService {
 
 
   // check if user exist
-  private checkUsername(username : string): Observable<Trainer | undefined> {
+  private checkUsername(username: string): Observable<Trainer | undefined> {
     return this.http.get<Trainer[]>(`${apiTrainers}?username=${username}`)
       .pipe(
         // RxJS operator
-    map((response: Trainer[]) => response.pop())
+        map((response: Trainer[]) => response.pop())
       )
   };
 
@@ -54,7 +54,8 @@ export class LoginService {
     });
 
     return this.http.post<Trainer>(apiTrainers, user, {
-      headers});
+      headers
+    });
 
 
   }

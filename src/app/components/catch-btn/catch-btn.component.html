@@ -1,0 +1,10 @@
+<aside *ngIf="!isCatched">
+  <button (click)="onCatchClick()" class="bg-orange-600 p-2 rounded hover:bg-orange-700">
+    <span>
+      catch this pokemon
+    </span>
+  </button>
+</aside>
+<aside *ngIf="isCatched">
+  Already catched
+</aside>
