@@ -6,6 +6,9 @@ import { Pokemon } from '../models/pokemon.model';
 import { Trainer } from '../models/trainer.model';
 import { TrainerService } from './trainer.service';
 
+/**
+ * This file is the service for the catch functionality
+ */
 const { apiKey, apiTrainers } = environment
 
 @Injectable({
@@ -18,8 +21,13 @@ export class CatchService {
     private readonly trainerService: TrainerService
   ) { }
 
+  /**
+   * takes a pokemon and updates the pokemon field in the api for the logged in trainer
+   *
+   * @param pokemon an instance of a Pokemon
+   * @returns an Observable of type Trainer
+   */
   addToCatched(pokemon: Pokemon): Observable<Trainer> {
-    console.log(this.trainerService.trainer);
     if (!this.trainerService.trainer)
       throw new Error("addToCatched: there is no trainer");
 

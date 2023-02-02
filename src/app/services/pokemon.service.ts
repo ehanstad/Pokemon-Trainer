@@ -7,7 +7,7 @@ export class PokemonService {
 
   constructor() { }
 
-  getPokemonUrl(pokemonUrl: string | undefined): string {
+  getPokemonId(pokemonUrl: string | undefined): string {
     if (pokemonUrl === undefined) {
       return "";
     } else {
