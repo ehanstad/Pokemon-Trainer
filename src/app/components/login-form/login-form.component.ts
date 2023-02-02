@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {LoginService} from "../../services/login.service";
 import {NgForm} from "@angular/forms";
 import {Trainer} from "../../models/trainer.model";
-import {Router} from "@angular/router";
+import {TrainerService} from "../../services/trainer.service";
+
 
 @Component({
   selector: 'app-login-form',
@@ -12,9 +13,12 @@ import {Router} from "@angular/router";
 export class LoginFormComponent {
 
 
+  @Output() login: EventEmitter<void> = new EventEmitter<void>();
+
+
   constructor(
     private readonly loginService: LoginService,
-    private readonly router: Router
+    private readonly trainerService: TrainerService,
   ) {
   }
 
@@ -26,13 +30,13 @@ export class LoginFormComponent {
 
     this.loginService.login(username)
       .subscribe({
-        next: (trainer:Trainer) => {
-
-
+        next: (trainer: Trainer) => {
+          this.trainerService.trainer = trainer;
+          this.login.emit();
         },
         error: (error) => {
 
         }
-      })
+      });
   }
 }
