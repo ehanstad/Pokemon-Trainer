@@ -13,11 +13,12 @@ const routes: Routes = [
   },
   {
     path: "login",
-    component: LoginPage
+    component: LoginPage,
   },
   {
     path: "pokémons",
-    component: PokemonCataloguePage
+    component: PokemonCataloguePage,
+    canActivate: [AuthGuard]
   },
   {
     path: "trainer",
