@@ -3,6 +3,9 @@ import { Observable } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.service';
 
+/**
+ * This component is the page for the pokemon catalogue
+ */
 @Component({
   selector: 'app-pokemon-catalogue',
   templateUrl: './pokemon-catalogue.page.html',

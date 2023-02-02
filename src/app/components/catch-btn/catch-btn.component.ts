@@ -5,6 +5,9 @@ import { Trainer } from 'src/app/models/trainer.model';
 import { CatchService } from 'src/app/services/catch.service';
 import { TrainerService } from 'src/app/services/trainer.service';
 
+/**
+ * This component represents the catch btn has one for each pokemon
+ */
 @Component({
   selector: 'app-catch-btn',
   templateUrl: './catch-btn.component.html',
@@ -14,7 +17,7 @@ export class CatchBtnComponent implements OnInit {
 
   public isCatched: boolean = false;
 
-  @Input() pokemon: Pokemon = {name: "", url: ""};
+  @Input() pokemon: Pokemon = { name: "", url: "" };
 
   constructor(
     private trainerService: TrainerService,
@@ -22,15 +25,18 @@ export class CatchBtnComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.isCatched = this.trainerService.inCatched(this.pokemon);
+    this.isCatched = this.trainerService.inCatched(this.pokemon);
   }
 
+  /**
+   * If the user clicks the btn this function is triggered it will call a
+   * function in the catchservice and add the pokemon to the trainer and
+   * change the variable value
+   */
   onCatchClick(): void {
     this.catchService.addToCatched(this.pokemon)
       .subscribe({
         next: (res: Trainer) => {
-          console.log(this.trainerService.inCatched(this.pokemon));
-
           this.isCatched = this.trainerService.inCatched(this.pokemon);
         },
         error: (error: HttpErrorResponse) => {

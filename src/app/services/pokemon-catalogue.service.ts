@@ -3,9 +3,11 @@ import { Injectable } from '@angular/core';
 import { Pokemon, PokemonResponse } from '../models/pokemon.model';
 import { BehaviorSubject, finalize, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import {StorageUtil} from "../utils/storage.util";
-import {StorageKeys} from "../enums/storage-keys.enum";
-
+import { StorageUtil } from "../utils/storage.util";
+import { StorageKeys } from "../enums/storage-keys.enum";
+/**
+ * This service handles the logic of fetching pokemons to the catalogue page
+ */
 const { apiPokemons } = environment;
 
 @Injectable({
@@ -35,11 +37,16 @@ export class PokemonCatalogueService {
     private readonly http: HttpClient
   ) { }
 
+  /**
+   * Checks if pokemons is in storage otherwise calls the pokemon api and fetches
+   * the pokemons from there and stores it in storage.
+   * @returns void
+   */
   public getPokemons(): void {
 
     const storedData: Pokemon[] = StorageUtil.storageRead(StorageKeys.Pokemon)!;
 
-    if(storedData || this.loading || this._pokemons$.value.length > 0) {
+    if (storedData || this.loading || this._pokemons$.value.length > 0) {
 
       if (this._pokemons$.value.length > 0) {
         return;
@@ -50,18 +57,11 @@ export class PokemonCatalogueService {
       return;
     }
 
-   /*
-    if (this._loading || this._pokemons$.value.length > 0) {
-      return;
-    }*/
-
     this._loading = true;
     this.http.get<PokemonResponse>(apiPokemons)
       .pipe(
         map((pokemonResponse: PokemonResponse) => {
-
           StorageUtil.storageSave(StorageKeys.Pokemon, pokemonResponse.results)
-
           return pokemonResponse.results;
         }),
         finalize(() => {

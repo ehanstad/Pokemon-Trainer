@@ -4,6 +4,9 @@ import { Pokemon } from 'src/app/models/pokemon.model';
 import { Trainer } from 'src/app/models/trainer.model';
 import { TrainerService } from 'src/app/services/trainer.service';
 
+/**
+ * This component is the page for the trainer
+ */
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
