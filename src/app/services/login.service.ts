@@ -20,6 +20,7 @@ export class LoginService {
   //Login
   public login(username: string): Observable<Trainer> {
 
+    // if trainer is undefined then create a new trainer, else return trainer
     return this.checkUsername(username)
       .pipe(
         switchMap((trainer: Trainer | undefined) => {
@@ -53,6 +54,7 @@ export class LoginService {
       'x-api-key': apiKey
     });
 
+    // this post requst creates a new user in the database
     return this.http.post<Trainer>(apiTrainers, user, {
       headers
     });
