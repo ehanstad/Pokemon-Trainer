@@ -1,7 +1,7 @@
-<header *ngIf="trainer">
-  <h1> Welcome, {{trainer.username}}</h1>
-</header>
-<main>
-  <h4>Your catched pokémons</h4>
-  <app-pokemon-list [pokemons$]="catchedPokemons$"></app-pokemon-list>
+<main *ngIf="trainer" class="flex flex-col items-center justify-items-center m-10">
+  <h1 class="text-4xl self-center justify-center"> Welcome, {{trainer.username}}</h1>
+  <h4 class="text-2xl">Your catched pokémons</h4>
+  <div class="flex flex-row">
+    <app-pokemon-list [pokemons$]="catchedPokemons$"></app-pokemon-list>
+  </div>
 </main>
