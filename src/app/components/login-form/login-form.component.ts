@@ -22,6 +22,9 @@ export class LoginFormComponent {
   ) {
   }
 
+  public get trainerName(): string | undefined {
+    return this.trainerService.trainer?.username;
+  }
 
   public loginSubmit(loginForm: NgForm): void {
 

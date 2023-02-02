@@ -8,11 +8,14 @@ import { TrainerService } from 'src/app/services/trainer.service';
 })
 export class NavbarComponent {
   // TODO Get trainer from trainer service
-  public get trainerName(): string | undefined {
-    return this.trainerService.trainer?.username;
-  }
   // TODO import trainer service
   constructor(
     private readonly trainerService: TrainerService,
   ) { }
+
+
+  public get trainerName(): string | undefined {
+    return this.trainerService.trainer?.username;
+  }
+
 }
