@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {LoginService} from "../../services/login.service";
-import {NgForm} from "@angular/forms";
-import {Trainer} from "../../models/trainer.model";
-import {TrainerService} from "../../services/trainer.service";
+import { Component, EventEmitter, Output } from '@angular/core';
+import { LoginService } from "../../services/login.service";
+import { NgForm } from "@angular/forms";
+import { Trainer } from "../../models/trainer.model";
+import { TrainerService } from "../../services/trainer.service";
 
 
 @Component({
@@ -28,12 +28,12 @@ export class LoginFormComponent {
   }
 
 
-// this is the function that is called when the user clicks the login button
+  // this is the function that is called when the user clicks the login button
   public loginSubmit(loginForm: NgForm): void {
 
-    const {username} = loginForm.value;
+    const { username } = loginForm.value;
 
-  //it gets the username and calls the login function from the login service
+    //it gets the username and calls the login function from the login service
     this.loginService.login(username)
       .subscribe({
         next: (trainer: Trainer) => {

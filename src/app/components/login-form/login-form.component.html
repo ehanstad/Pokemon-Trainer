@@ -1,56 +1,84 @@
-<ng-container *ngIf="trainerName === undefined; else alreadyLoggedIn" class="container p-14 h-full">
-
+<ng-container
+  *ngIf="trainerName === undefined; else alreadyLoggedIn"
+  class="container p-14 h-full"
+>
   <section class="p-5">
     <header class="p-2 flex flex-col items-center justify-center">
       <div class="flex flex-row flex-wrap">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" class="w-42 mr-5" alt="3"/>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" class="w-42 mr-5" alt="4"/>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png" class="w-42 mr-5" alt="5"/>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" class="w-42 mr-5" alt="6"/>
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+          class="w-42 mr-5"
+          alt="3"
+        />
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+          class="w-42 mr-5"
+          alt="4"
+        />
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+          class="w-42 mr-5"
+          alt="5"
+        />
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+          class="w-42 mr-5"
+          alt="6"
+        />
       </div>
       <div class="mb-2 text-center">
-        <h1 class="text-4xl font-bold text-center text-gray-700 sm:text-center text-red-600">Welcome to the Pokémon Universe</h1>
+        <h1
+          class="text-4xl font-bold text-center sm:text-center text-red-600"
+        >
+          Welcome to the Pokémon Universe
+        </h1>
       </div>
     </header>
-    <form #loginForm="ngForm" (ngSubmit)="loginForm.valid&&loginSubmit(loginForm)">
+    <form
+      #loginForm="ngForm"
+      (ngSubmit)="loginForm.valid && loginSubmit(loginForm)"
+    >
       <fieldset class="mb-3">
-        <input type="text"
-               ngModel
-               required
-               minlength="2"
-               #username="ngModel"
-               name="username" id="username"
-               class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-               placeholder="Enter your username"/>
-        <div *ngIf="username.invalid && (username.dirty || username.touched)"
-             class="alert">
-
-          <div *ngIf="username.errors?.['required']">
-            Username is required.
-          </div>
+        <input
+          type="text"
+          ngModel
+          required
+          minlength="2"
+          #username="ngModel"
+          name="username"
+          id="username"
+          class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          placeholder="Enter your username"
+        />
+        <div
+          *ngIf="username.invalid && (username.dirty || username.touched)"
+          class="alert"
+        >
+          <div *ngIf="username.errors?.['required']">Username is required.</div>
           <div *ngIf="username.errors?.['minlength']">
             Username must be at least 2 characters long.
           </div>
-
-
         </div>
       </fieldset>
-      <button type="submit"
-
-              [disabled]="loginForm.invalid"
-              class="inline-block disabled:opacity-75 px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="light">Login</button>
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="inline-block disabled:opacity-75 px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+        data-mdb-ripple="true"
+        data-mdb-ripple-color="light"
+      >
+        Login
+      </button>
     </form>
   </section>
 </ng-container>
 
 <ng-template #alreadyLoggedIn>
-  <div class="text-center m-10 border-black-500 border rounded p-4 ">
-    <p class="text-green-600 text-3xl" >You are already logged in as: </p>
-    <p class="text-green-700 font-bold text-4xl" > {{ trainerName }}</p>
-    <p class="text-green-500 font-bold text-base">Please use the navbar to go back and catch some pokémons</p>
-
+  <div class="text-center m-10 border-black-500 border rounded p-4">
+    <p class="text-green-600 text-3xl">You are already logged in as:</p>
+    <p class="text-green-700 font-bold text-4xl">{{ trainerName }}</p>
+    <p class="text-green-500 font-bold text-base">
+      Please use the navbar to go back and catch some pokémons
+    </p>
   </div>
 </ng-template>
-

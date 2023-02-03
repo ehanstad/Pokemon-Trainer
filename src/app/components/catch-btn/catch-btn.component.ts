@@ -31,10 +31,10 @@ export class CatchBtnComponent implements OnInit {
   /**
    * If the user clicks the btn this function is triggered it will call a
    * function in the catchservice and add the pokemon to the trainer and
-   * change the variable value
+   * change the variable value alternatively remove the pokemon
    */
   onCatchClick(): void {
-    this.catchService.addToCatched(this.pokemon)
+    this.catchService.updateCatched(this.pokemon)
       .subscribe({
         next: (res: Trainer) => {
           this.isCatched = this.trainerService.inCatched(this.pokemon);

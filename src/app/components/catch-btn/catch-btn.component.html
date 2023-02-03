@@ -1,10 +1,13 @@
 <aside>
-  <button (click)="onCatchClick()" class="bg-orange-600 p-2 rounded hover:bg-orange-700">
-    <span *ngIf="!isCatched">
-      catch this pokemon
-    </span>
-    <span *ngIf="isCatched">
-      remove
-    </span>
+  <button
+    (click)="onCatchClick()"
+    class="bg-orange-600 p-2 rounded hover:bg-orange-700"
+  >
+    <ng-container
+      *ngIf="isCatched; then catched; else notCatched"
+    ></ng-container>
   </button>
 </aside>
+
+<ng-template #catched> release </ng-template>
+<ng-template #notCatched> catch this pokemon </ng-template>

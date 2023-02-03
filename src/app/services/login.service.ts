@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Trainer} from "../models/trainer.model";
-import {map, Observable, of, switchMap} from "rxjs";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {environment} from "../../environments/environment";
+import { Trainer } from "../models/trainer.model";
+import { map, Observable, of, switchMap } from "rxjs";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { environment } from "../../environments/environment";
 
 
 const { apiTrainers, apiKey } = environment
@@ -27,7 +27,7 @@ export class LoginService {
           if (trainer === undefined) {
             return this.createTrainer(username);
           }
-          return of (trainer);
+          return of(trainer);
         })
       )
   }
@@ -58,11 +58,5 @@ export class LoginService {
     return this.http.post<Trainer>(apiTrainers, user, {
       headers
     });
-
-
   }
-
-
-
-
 }
