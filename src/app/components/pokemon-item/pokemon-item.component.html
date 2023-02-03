@@ -1,4 +1,7 @@
-<div *ngIf="pokemon !== undefined" class="rounded flex flex-col items-center justify-center bg-red-900 m-5 p-2 text-white w-50">
+<div
+  *ngIf="pokemon !== undefined"
+  class="rounded flex flex-col items-center justify-center bg-red-900 m-5 p-2 text-white w-50"
+>
   <app-catch-btn [pokemon]="pokemon"></app-catch-btn>
   <h2 class="text-2xl">
     {{ pokemon.name }}

@@ -34,7 +34,7 @@ export class CatchService {
     const trainer: Trainer = this.trainerService.trainer;
 
     if (this.trainerService.inCatched(pokemon)) {
-      throw new Error("addToCatched: pokemon is already catched");
+      this.trainerService.removeFromCatched(pokemon);
     } else {
       this.trainerService.addToCatched(pokemon);
     }
