@@ -38,11 +38,8 @@ export class TrainerService {
 
   // this removes the pokemon to the trainer's pokemon array
   removeFromCatched(pokemon: Pokemon) {
-    if (this._trainer) {
+    if (this._trainer)
       this._trainer.pokemon = this._trainer.pokemon.filter(p => p.name !== pokemon.name);
-      console.log(this._trainer.pokemon);
-
-    }
   }
 
   constructor() {

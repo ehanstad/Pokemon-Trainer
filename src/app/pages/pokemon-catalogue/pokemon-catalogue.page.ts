@@ -15,7 +15,7 @@ export class PokemonCataloguePage implements OnInit {
 
   constructor(
     private readonly pokemonCatalogueService: PokemonCatalogueService,
-  ){ }
+  ) { }
 
   public get pokemons$(): Observable<Pokemon[]> {
     return this.pokemonCatalogueService.pokemons$;

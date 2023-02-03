@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from "./pages/login/login.page";
 import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
 import { ProfilePage } from './pages/profile/profile.page';
-import {AuthGuard} from "./guards/auth.guard";
+import { AuthGuard } from "./guards/auth.guard";
 
 
 // This is the routing module, it defines the routes of the application

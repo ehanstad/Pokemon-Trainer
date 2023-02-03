@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {TrainerService} from "./services/trainer.service";
-import {PokemonCatalogueService} from "./services/pokemon-catalogue.service";
+import { Component, OnInit } from '@angular/core';
+import { TrainerService } from "./services/trainer.service";
+import { PokemonCatalogueService } from "./services/pokemon-catalogue.service";
 
 /**
  * This is the root component of the application
@@ -22,8 +22,5 @@ export class AppComponent implements OnInit {
       console.log('Trainer is logged in');
       this.pokemonCatalogueService.getPokemons();
     }
-
   }
-
-
 }

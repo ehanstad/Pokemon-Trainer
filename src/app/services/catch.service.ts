@@ -27,7 +27,7 @@ export class CatchService {
    * @param pokemon an instance of a Pokemon
    * @returns an Observable of type Trainer
    */
-  addToCatched(pokemon: Pokemon): Observable<Trainer> {
+  updateCatched(pokemon: Pokemon): Observable<Trainer> {
     if (!this.trainerService.trainer)
       throw new Error("addToCatched: there is no trainer");
 
